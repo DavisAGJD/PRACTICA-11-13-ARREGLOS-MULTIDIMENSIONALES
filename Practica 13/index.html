@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 13</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Resumen de Calificaciones</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Tabla de Calificaciones</h2>
+        <div class="table-container">
+            <table id="calificacionesTable">
+                <thead>
+                    <tr>
+                        <th>Alumno</th>
+                        <th>Parcial 1</th>
+                        <th>Parcial 2</th>
+                        <th>Parcial 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se insertarán las filas de la tabla -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="buttons">
+            <button id="calcularBtn">Calcular Promedios</button>
+            <button id="editarBtn">Editar Calificaciones</button>
+            <button id="guardarBtn" style="display:none;">Guardar Cambios</button>
+        </div>
+        
+        
+        <div id="resultados">
+            <h3>Resultados</h3>
+            <p id="output"></p>
+        </div>
+    </div>
+    
+    <script src="script.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practicas 11-13</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Practicas</h1>
+        </header>
+
+        <div class="practica-11">
+            <h1>Matriz</h1>
+            <button id="generar-matriz">Generar Matriz Aleatoria</button>
+            <button id="insertar-matriz">Ingresar Matriz
+                Manualmente</button>
+
+            <div class="matrix-and-results">
+                <!-- Matriz -->
+                <div class="matrix-container">
+                    <table id="matrix"></table>
+                </div>
+
+                <button id="calculateBtn"
+                    style="display:none;">Calcular</button>
+
+                <h3>Suma y Promedio por Columna (A y B)</h3>
+                <!-- Suma y promedio por fila (A y B) -->
+                <div class="right-table">
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="sumrows"></td>
+                                <!-- Mostrar las sumas de A de forma vertical -->
+                                <td id="avgrows"></td>
+                                <!-- Mostrar los promedios de B de forma vertical -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Botón de Calcular -->
+
+            <!-- Suma y Promedio por Columna (C y D) -->
+            <h3>Suma y Promedio por Columna (C y D)</h3>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>C</th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="sumcols"></td>
+                        <!-- Mostrar las sumas de C de forma vertical -->
+                        <td id="avgcols"></td>
+                        <!-- Mostrar los promedios de D de forma vertical -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="script.js" type="module"></script>
+    </body>
+</html>

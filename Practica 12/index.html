@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 12</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Práctica 12 - Resumen de Ventas</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Matriz de Ventas</h2>
+        <div class="matrix-container">
+            <table id="salesTable">
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sábado</th>
+                        <th>Domingo</th>
+                    </tr>
+                </thead>
+                <tbody></tbody> <!-- El contenido de la matriz se cargará aquí -->
+            </table>
+        </div>
+    
+        <div class="buttons">
+            <button id="minSaleBtn">Mostrar Venta Mínima</button>
+            <button id="maxSaleBtn">Mostrar Venta Máxima</button>
+            <button id="totalSaleBtn">Mostrar Venta Total</button>
+            <button id="daySalesBtn">Mostrar Venta por Día</button>
+            <button id="agregarVentasBtn">Cambiar Ventas</button>
+        </div>
+    
+        <div id="result">
+            <h3>Resultados</h3>
+            <p id="output"></p>
+        </div>
+    </div>
+    
+    
+    <script src="script.js" type="module"></script>
+    
+</body>
+</html>
