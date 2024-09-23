@@ -50,20 +50,22 @@ class Ventas {
     }
 
     // d) Venta por día (Lunes - Domingo)
-    calcularVentaPorDia() {
-        let ventasPorDia = new Array(7).fill(0);
-
-        for (let i = 0; i < this.matriz.length; i++) {
-            for (let j = 0; j < this.matriz[i].length; j++) {
-                ventasPorDia[j] += this.matriz[i][j];
+    calcularVentaPorDia(fila = 0, ventasPorDia = new Array(7).fill(0)) {
+        // Caso base: si hemos recorrido todas las filas
+        if (fila >= this.matriz.length) {
+            let resultado = "";
+            for (let i = 0; i < this.dias.length; i++) {
+                resultado += `${this.dias[i]}: $${ventasPorDia[i]}.00<br>`;
             }
+            return resultado;
         }
 
-        let resultado = "";
-        for (let i = 0; i < this.dias.length; i++) {
-            resultado += `${this.dias[i]}: $${ventasPorDia[i]}.00<br>`;
+        // Sumar las ventas del día de cada fila (mes)
+        for (let col = 0; col < this.matriz[fila].length; col++) {
+            ventasPorDia[col] += this.matriz[fila][col];
         }
-        return resultado;
+
+        return this.calcularVentaPorDia(fila + 1, ventasPorDia);
     }
 }
 

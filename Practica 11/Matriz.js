@@ -39,36 +39,41 @@ class Matriz {
             let fila = [];
             for (let j = 0; j < this.columnas; j++) {
                 const valor = document.getElementById(`input-${i}-${j}`).value;
-                fila.push(parseInt(valor));
+                fila.push(parseInt(valor)); 
             }
-            this.matriz.push(fila);
+            this.matriz.push(fila);  
         }
     }
+    
 
-    calcularSumaPromedioFilas() {
-        let sumaFilas = [];
-        let promedioFilas = [];
-        this.matriz.forEach(fila => {
-            const suma = fila.reduce((acc, num) => acc + num, 0);
-            sumaFilas.push(suma);
-            promedioFilas.push(suma / fila.length);
-        });
-        return { sumaFilas, promedioFilas };
+    // Recursivo: Calcular suma y promedio de una fila
+    calcularSumaPromedioFilaRecursivo(fila, index = 0, suma = 0) {
+        if (index >= fila.length) return { suma, promedio: suma / fila.length };  // Caso base.
+
+        return this.calcularSumaPromedioFilaRecursivo(fila, index + 1, suma + fila[index]);  // Llamada recursiva.
     }
 
-    calcularSumaPromedioColumnas() {
-        let sumaColumnas = new Array(this.columnas).fill(0);
-        let promedioColumnas = new Array(this.columnas).fill(0);
+    // Recursivo: Calcular suma y promedio de filas
+    calcularSumaPromedioFilas(fila = 0, sumaFilas = [], promedioFilas = []) {
+        if (fila >= this.filas) return { sumaFilas, promedioFilas };  // Caso base.
 
-        this.matriz.forEach(fila => {
-            fila.forEach((num, j) => {
-                sumaColumnas[j] += num;
-            });
-        });
+        const { suma, promedio } = this.calcularSumaPromedioFilaRecursivo(this.matriz[fila]);
+        sumaFilas.push(suma);
+        promedioFilas.push(promedio);
 
-        promedioColumnas = sumaColumnas.map(suma => suma / this.filas);
+        return this.calcularSumaPromedioFilas(fila + 1, sumaFilas, promedioFilas);  // Llamada recursiva.
+    }
 
-        return { sumaColumnas, promedioColumnas };
+    // Recursivo: Calcular suma y promedio de una columna
+    calcularSumaPromedioColumnas(columna = 0, sumaColumnas = new Array(this.columnas).fill(0)) {
+        if (columna >= this.columnas) {
+            const promedioColumnas = sumaColumnas.map(suma => suma / this.filas);
+            return { sumaColumnas, promedioColumnas };  // Caso base.
+        }
+
+        this.matriz.forEach(fila => sumaColumnas[columna] += fila[columna]);
+
+        return this.calcularSumaPromedioColumnas(columna + 1, sumaColumnas);  // Llamada recursiva.
     }
 
     mostrarMatriz() {
@@ -114,7 +119,7 @@ class Matriz {
     }
 
     calcularDesdeInputs() {
-        this.obtenerValoresDesdeInputs();
+        this.obtenerValoresDesdeInputs();  // Recursivo
         this.mostrarResultados();
     }
 }
