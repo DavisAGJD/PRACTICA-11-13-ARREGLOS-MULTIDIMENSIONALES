@@ -2,7 +2,7 @@ import Ventas from './ventas.js';
 
 // Referencias a los nombres de los días y meses
 const diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre"];
+const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
 // Inicializar la matriz de ventas (añadiendo los valores de sábado y domingo)
 let matrizVentas = [
@@ -15,7 +15,9 @@ let matrizVentas = [
     [50, 70, 40, 11, 18, 32, 21],
     [20, 40, 32, 13, 20, 19, 8],
     [50, 3, 24, 15, 82, 17, 26],
-    [40, 46, 15, 46, 22, 28, 33]
+    [40, 6, 15, 46, 22, 28, 33],
+    [40, 4, 5, 46, 32, 48, 23],
+    [4, 46, 15, 6, 2, 28, 33],
 ];
 
 // Crear una instancia de la clase Ventas
